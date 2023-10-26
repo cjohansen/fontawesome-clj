@@ -47,7 +47,7 @@ To use a pro distribution you must first download the zip file, then import it:
 clojure -Sdeps "{:deps {no.cjohansen/fontawesome-clj {:mvn/version \"2023.10.26\"} \
                         clj-http/clj-http {:mvn/version \"3.12.3\"} \
                         hickory/hickory {:mvn/version \"0.7.1\"}}}" \
-  -M -m fontawesome.import :import resources 6.4.2~/Downloads/fontawesome-pro-6.4.2-desktop.zip
+  -M -m fontawesome.import :import resources 6.4.2 ~/Downloads/fontawesome-pro-6.4.2-desktop.zip
 ```
 
 ## Usage from Clojure
