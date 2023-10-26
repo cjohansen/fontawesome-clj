@@ -1,0 +1,17 @@
+{:paths ["src" "resources"]
+ :aliases
+ {:dev
+  {:extra-paths ["dev" "dev-resources"]
+   :extra-deps
+   {org.clojure/clojure {:mvn/version "1.11.1"}
+    org.clojure/clojurescript {:mvn/version "1.11.60"}
+    cider/piggieback {:mvn/version "0.4.1"}
+    cjohansen/dumdom {:mvn/version "2023.03.27"}
+    no.cjohansen/portfolio {:mvn/version "2023.04.20"}
+    clj-http/clj-http {:mvn/version "3.12.3"}
+    com.bhauman/figwheel-main {:mvn/version "0.2.18"}
+    figwheel-sidecar/figwheel-sidecar {:mvn/version "0.5.17"}
+    hickory/hickory {:mvn/version "0.7.1"}}}
+  :jar {:extra-deps {pack/pack.alpha {:git/url "https://github.com/juxt/pack.alpha.git"
+                                      :sha "e518d9b2b70f4292c9988d2792b8667d88a6f4df"}}
+        :main-opts ["-m" "mach.pack.alpha.skinny" "--no-libs" "--project-path" "fontawesome.jar"]}}}

@@ -1,0 +1,7 @@
+.cpcache/
+.nrepl-port
+dev-resources/public/fontawesome/js
+target
+/fontawesome.jar
+.clj-kondo/.cache
+/dev-resources/fontawesome-icons/

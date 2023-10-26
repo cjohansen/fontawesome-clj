@@ -1,0 +1,7 @@
+{:main fontawesome.dev
+ :optimizations :none
+ :pretty-print true
+ :source-map true
+ :asset-path "/fontawesome/js/dev"
+ :output-to "dev-resources/public/fontawesome/js/app.js"
+ :output-dir "dev-resources/public/fontawesome/js/dev"}
