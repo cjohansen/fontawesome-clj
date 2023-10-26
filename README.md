@@ -33,10 +33,10 @@ have to provide those dependencies while importing:
 To use the free distribution:
 
 ```sh
-clojure -Sdeps "{:deps {no.cjohansen/fontawesome {:mvn/version \"2023.10.26\"} \
+clojure -Sdeps "{:deps {no.cjohansen/fontawesome-clj {:mvn/version \"2023.10.26\"} \
                         clj-http/clj-http {:mvn/version \"3.12.3\"} \
                         hickory/hickory {:mvn/version \"0.7.1\"}}}" \
-  -m fontawesome :download resources 6.4.2
+  -M -m fontawesome.import :download resources 6.4.2
 ```
 
 This will install version 6.4.2 icons into your `resources` directory.
@@ -44,10 +44,10 @@ This will install version 6.4.2 icons into your `resources` directory.
 To use a pro distribution you must first download the zip file, then import it:
 
 ```sh
-clojure -Sdeps "{:deps {no.cjohansen/fontawesome {:mvn/version \"2023.10.26\"} \
+clojure -Sdeps "{:deps {no.cjohansen/fontawesome-clj {:mvn/version \"2023.10.26\"} \
                         clj-http/clj-http {:mvn/version \"3.12.3\"} \
                         hickory/hickory {:mvn/version \"0.7.1\"}}}" \
-  -m fontawesome :import resources 6.4.2~/Downloads/fontawesome-pro-6.4.2-desktop.zip
+  -M -m fontawesome.import :import resources 6.4.2~/Downloads/fontawesome-pro-6.4.2-desktop.zip
 ```
 
 ## Usage from Clojure
