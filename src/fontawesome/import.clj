@@ -58,7 +58,7 @@
 (defn export-icons [zip-in target]
   (consume-zip
    (fn [entry]
-     (when (re-find #"\.svg$" (:path entry))
+     (when (re-find #"^(?!fontawesome-.+[/\//]sprites).+\.svg$" (:path entry))
        (export-icon (:path entry) (get-zip-entry-content entry) target)))
    zip-in))
 
