@@ -29,10 +29,16 @@
         (update 1 merge (dissoc attrs :size :color :style)))
     (throw (Error. (str "Icon " id " does not exist")))))
 
+(defn load-icon! [id resource])
+
 (defmacro ^:export icon [id]
-  `(do
-     (fontawesome.icons/load-icon! ~id ~(load-icon-resource* id))
-     ~id))
+  (if (:ns &env)
+    ;; ClojureScript needs to load the icon into the build
+    `(do
+       (fontawesome.icons/load-icon! ~id ~(load-icon-resource* id))
+       ~id)
+    ;; Clojure loads icons lazily when rendering
+    id))
 
 (defn get-icon-ids* []
   (->> (io/resource base-path)
