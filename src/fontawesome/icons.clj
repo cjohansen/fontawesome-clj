@@ -19,14 +19,16 @@
 
 (defn render [id & [{:keys [size color style] :as attrs}]]
   (if-let [svg (load-icon-resource id)]
-    (-> svg
-        (assoc-in [1 :style] (cond-> {:display "inline-block"
-                                      :line-height "1"}
-                               size (assoc :height size)
-                               size (assoc :width size)
-                               color (assoc :color color)
-                               style (into style)))
-        (update 1 merge (dissoc attrs :size :color :style)))
+    (let [size (cond-> size
+                 (number? size) (str "px"))]
+      (-> svg
+          (assoc-in [1 :style] (cond-> {:display "inline-block"
+                                        :line-height "1"}
+                                 size (assoc :height size)
+                                 size (assoc :width size)
+                                 color (assoc :color color)
+                                 style (into style)))
+          (update 1 merge (dissoc attrs :size :color :style))))
     (throw (Error. (str "Icon " id " does not exist")))))
 
 (defn load-icon! [id resource])
